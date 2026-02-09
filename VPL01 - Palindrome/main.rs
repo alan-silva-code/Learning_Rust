@@ -13,14 +13,14 @@ fn palindrome(){
     let result = string_manipulation();
     let mut length: usize = result.len();
     let mut i: usize = 0;
-    while i == length {
+    while i < length {
     let u: char = result.chars().nth(i).unwrap();        
-    if u == result.chars().nth(length).unwrap() {
+    if u == result.chars().nth(length - 1).unwrap() {
             length = length - 1;
             i = i + 1;
         } else {
             println!("It is not a palindrome!");
-            break;
+            return;
         }
     }
     println!("It's a palindrome.");
